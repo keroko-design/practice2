@@ -4,30 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        font-family: "Yu Gothic", "YuGothic","游ゴシック","游ゴシック体",sans-serif;
+      }
+    </style>
     <title>風と森の工務店｜採用サイト</title>
 </head>
 
 <body>
-	<main>
-		<section class="h-screen bg-cover bg-center bg-no-repeat bg-[url('img/mv.jpg')]">
-			<header>
-					<img src="img/logo.svg" alt="風と森の工務店">
-					<nav>
-							<ul>
-									<li><a href="#">募集職種</a></li>
-									<li><a href="#">わたしたちの想い</a></li>
-									<li><a href="#">会社について</a></li>
-									<li><a href="#">お知らせ</a></li>
-									<li><a href="#">エントリー</a></li>
-							</ul>
-					</nav>
-			</header>
-			<!-- <img src="img/mv.jpg" alt="家づくりの先の、人の暮らしと未来をつくる" class="absolute inset-0 w-full h-full object-cover"> -->
+  <header class="absolute top-0 left-0 w-full z-20 ">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between max-w-[1000px]">
+      <a href="#" class="shrink-0">
+        <img src="img/logo.svg" alt="風と森の工務店" class="h-7 w-auto">
+      </a>
 
-			<div class="relative z-10">
-				<h1 class="text-4xl font-semibold text-white tracking-wider">家づくりの先の、<br>人の暮らしと未来をつくる</h1>
-				<a class="bg-[#007A88] text-base text-white px-4 py-2 rounded-full" href="#">エントリー</a>
-			</div>
+      <!-- PCナビ（1024px以上） -->
+      <nav class="hidden lg:block">
+        <ul class="flex items-center gap-6 text-white text-m font-medium">
+          <li><a href="#position" class="hover:opacity-80 transition">募集職種</a></li>
+          <li><a href="#mission-value" class="hover:opacity-80 transition">わたしたちの想い</a></li>
+          <li><a href="#about" class="hover:opacity-80 transition">会社について</a></li>
+          <li><a href="#news" class="hover:opacity-80 transition">お知らせ</a></li>
+        </ul>
+      </nav>
+      
+      <a href="#entry" class="hidden lg:block items-center gap-2 px-8 py-1 rounded-full bg-[#007A88] text-white text-m font-medium hover:bg-white hover:text-[#007A88] transition-colors duration-300">
+        エントリー
+        <span aria-hidden="true">›</span>
+      </a>
+
+      <!-- ハンバーガー（1024px未満） -->
+      <button id="menuOpenBtn" class="lg:hidden flex flex-col gap-1" aria-controls="spMenu" aria-expanded="false" aria-label="メニューを開く" type="button">
+        <span class="w-6 h-[2px] bg-white"></span>
+        <span class="w-6 h-[2px] bg-white"></span>
+        <span class="w-6 h-[2px] bg-white"></span>
+      </button>
+
+      <!-- SPメニュー（lg未満） -->
+      <div id="spMenu" class="hidden lg:hidden fixed inset-0 bg-white z-50" role="dialog" aria-modal="true">
+        <div class="h-full px-6 py-6">
+          <div class="flex items-start justify-between">
+            <a href="#top" class="shrink-0" data-close>
+              <img src="img/logo_green.svg" alt="風と森の工務店" class="h-7 w-auto">
+            </a>
+    
+            <button
+              id="menuCloseBtn"
+              class="w-8 h-8 text-gray-400 hover:text-gray-700 transition-colors"
+              aria-label="メニューを閉じる"
+              type="button">
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              class="w-full h-full"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 6l12 12M6 18L18 6"
+              />
+            </svg>
+            </button>
+          </div>
+          <nav class="mt-10">
+            <ul class="space-y-8 text-gray-800 text-base font-semibold">
+              <li><a href="#position" class="block" data-close>募集職種</a></li>
+              <li><a href="#mission-value" class="block" data-close>わたしたちの想い</a></li>
+              <li><a href="#about" class="block" data-close>会社について</a></li>
+              <li><a href="#news" class="block" data-close>お知らせ</a></li>
+            </ul>
+    
+            <a
+              href="#entry"
+              class="mt-10 inline-flex items-center justify-between
+                     w-[240px] px-7 py-2 rounded-full
+                     bg-[#007A88] text-white font-semibold"
+              data-close
+            >
+              エントリー <span aria-hidden="true">›</span>
+            </a>
+          </nav>
+          <div class="mt-12 text-xs text-gray-500 space-y-3">
+            <a href="#" class="block hover:text-gray-700" data-close>プライバシーポリシー</a>
+            <a href="#" class="block hover:text-gray-700" data-close>風と森の工務店コーポレートサイトはこちら</a>
+          </div>
+        </div>
+    
+      
+    </div>
+  </header>
+
+  <script>
+    const openBtn = document.getElementById("menuOpenBtn");
+    const closeBtn = document.getElementById("menuCloseBtn");
+    const menu = document.getElementById("spMenu");
+  
+    function openMenu() {
+      menu.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      openBtn.setAttribute("aria-expanded", "true");
+    }
+  
+    function closeMenu() {
+      menu.classList.add("hidden");
+      document.body.style.overflow = "";
+      openBtn.setAttribute("aria-expanded", "false");
+    }
+  
+    openBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
+  
+    // メニュー内リンククリックで閉じる
+    menu.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target && target.closest("[data-close]")) {
+        closeMenu();
+      }
+    });
+  
+    // Escで閉じる
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !menu.classList.contains("hidden")) {
+        closeMenu();
+      }
+    });
+  </script>
+
+	<main>
+		<section id="top" class="relative h-screen bg-cover bg-center bg-no-repeat bg-[url('img/mv_sp.jpg')] md:bg-[url('img/mv.jpg')]">
+       <div class="h-full flex items-center">
+         <div class="max-w-[1000px] mx-auto px-6 w-full">
+           <h1 class="text-3xl md:text-4xl lg:text-4xl font-semibold text-white tracking-wider my-10 leading-normal">
+             家づくりの先の、<br>
+             人の暮らしと未来を<br class="md:hidden">つくる
+           </h1>
+           <a class="inline-flex w-full max-w-[240px] bg-white text-base text-[#007A88] font-semibold border border-[#007A88] px-8 py-2 rounded-full justify-between hover:bg-[#007A88] hover:text-white transition-colors duration-300" href="#entry">
+             エントリー <span aria-hidden="true">›</span>
+           </a>
+         </div>
+       </div>
 
 			</section>
 
