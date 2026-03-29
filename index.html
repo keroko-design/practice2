@@ -12,9 +12,19 @@
       .font-arial {
         font-family: Arial, Helvetica, sans-serif;
       }
+      .news-scroll {
+        -ms-overflow-style: none; /* IE・Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .news-scroll::-webkit-scrollbar {
+        display: none; /* Chrome・Safari */
+      }
+
     </style>
     <title>風と森の工務店｜採用サイト</title>
 </head>
+
 
 <body>
   <header class="absolute top-0 left-0 w-full z-20 ">
@@ -492,9 +502,172 @@
         </div>
 			</section>
 
-			<section class="news">
-				<h2>お知らせ</h2>
-			</section>
+			<section id="news" class="news bg-[#EFF7F8] py-20 md:py-28 lg:py-[120px]">
+        <div class="w-full overflow-hidden bg-[#EFF7F8]">
+          <div class="px-5 md:px-14 lg:px-20">
+            <div class="mx-auto w-full max-w-[1000px] lg:flex lg:items-start lg:justify-between">
+               
+                <header class="text-center space-y-2 lg:text-left">
+                  <p class="text-sm tracking-[0.1em] text-gray-400">
+                    NEWS
+                  </p>
+                  <h2 class="text-2xl md:text-3xl font-medium tracking-[0.1em] text-[#007A88]">
+                    お知らせ
+                  </h2>
+                </header>             
+        
+              <div class="hidden lg:flex lg:items-center lg:gap-6">
+                <button
+                  id="newsPrev"
+                  type="button"
+                  class="flex h-[64px] w-[64px] items-center justify-center rounded-full border border-[#007A88] text-[#007A88] transition-colors duration-300 hover:bg-[#007A88] hover:text-white"
+                  aria-label="前のお知らせを見る"
+                >
+                  <span class="text-3xl leading-none">‹</span>
+                </button>
+        
+                <button
+                  id="newsNext"
+                  type="button"
+                  class="flex h-[64px] w-[64px] items-center justify-center rounded-full border border-[#007A88] text-[#007A88] transition-colors duration-300 hover:bg-[#007A88] hover:text-white"
+                  aria-label="次のお知らせを見る"
+                >
+                  <span class="text-3xl leading-none">›</span>
+                </button>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+      
+          <!-- card -->
+          <div class="mt-8 md:mt-10 lg:mt-12 lg:overflow-hidden">
+            <div class="lg:ml-[260px]">
+
+              <div id="newsScroll" class="news-scroll overflow-x-auto">
+               
+               
+                  <ul class="flex min-w-max gap-4 pr-5 sm:gap-5 lg:gap-6 lg:pr-0">
+        
+                    <li class="w-[240px] sm:w-[280px] lg:w-[320px] shrink-0 overflow-hidden rounded-[5px] bg-white shadow-[4px_4px_20px_rgba(197,197,197,0.25)]">
+                      <a href="#" class="block h-full">
+                        <img src="img/news01.jpg" alt="職種別オンライン座談会" class="h-[160px] sm:h-[180px] lg:h-[198px] w-full object-cover">
+                        <div class="flex min-h-[170px] flex-col items-start gap-4 p-4">
+                          <div class="inline-flex h-6 items-center justify-center rounded-[5px] border border-[#007A88] px-4">
+                            <p class="text-sm font-bold text-[#007A88]">座談会</p>
+                          </div>
+                          <h3 class="text-[18px] font-bold leading-[1.5] tracking-[0.1em] text-[#333333]">
+                            【設計士】職種別オンライン座談会
+                          </h3>
+                          <div class="mt-auto flex items-center gap-1">
+                            <img src="img/map_pin.svg" alt="" class="h-4 w-4 shrink-0">
+                            <p class="text-sm font-bold tracking-[0.1em] text-[#333333]">
+                              オンライン
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+        
+                    <li class="w-[240px] sm:w-[280px] lg:w-[320px] shrink-0 overflow-hidden rounded-[5px] bg-white shadow-[4px_4px_20px_rgba(197,197,197,0.25)]">
+                      <a href="#" class="block h-full">
+                        <img src="img/news02.jpg" alt="職種別説明会開催！先輩に直接質問できる座談会もあります" class="h-[160px] sm:h-[180px] lg:h-[198px] w-full object-cover">
+                        <div class="flex min-h-[170px] flex-col items-start gap-4 p-4">
+                          <div class="inline-flex h-6 items-center justify-center rounded-[5px] border border-[#007A88] px-4">
+                            <p class="text-sm font-bold text-[#007A88]">説明会</p>
+                          </div>
+                          <h3 class="text-[18px] font-bold leading-[1.5] tracking-[0.1em] text-[#333333]">
+                            職種別説明会開催！先輩に直接質問できる座談会もあります
+                          </h3>
+                          <div class="mt-auto flex items-center gap-1">
+                            <img src="img/map_pin.svg" alt="" class="h-4 w-4 shrink-0">
+                            <p class="text-sm font-bold tracking-[0.1em] text-[#333333]">
+                              風と森の工務店
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+        
+                    <li class="w-[240px] sm:w-[280px] lg:w-[320px] shrink-0 overflow-hidden rounded-[5px] bg-white shadow-[4px_4px_20px_rgba(197,197,197,0.25)]">
+                      <a href="#" class="block h-full">
+                        <img src="img/news01.jpg" alt="【営業】職種別オンライン座談会" class="h-[160px] sm:h-[180px] lg:h-[198px] w-full object-cover">
+                        <div class="flex min-h-[170px] flex-col items-start gap-4 p-4">
+                          <div class="inline-flex h-6 items-center justify-center rounded-[5px] border border-[#007A88] px-4">
+                            <p class="text-sm font-bold text-[#007A88]">説明会</p>
+                          </div>
+                          <h3 class="text-[18px] font-bold leading-[1.5] tracking-[0.1em] text-[#333333]">
+                            【営業】職種別オンライン座談会
+                          </h3>
+                          <div class="mt-auto flex items-center gap-1">
+                            <img src="img/map_pin.svg" alt="" class="h-4 w-4 shrink-0">
+                            <p class="text-sm font-bold tracking-[0.1em] text-[#333333]">
+                              オンライン
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+        
+                    <li class="w-[240px] sm:w-[280px] lg:w-[320px] shrink-0 overflow-hidden rounded-[5px] bg-white shadow-[4px_4px_20px_rgba(197,197,197,0.25)]">
+                      <a href="#" class="block h-full">
+                        <img src="img/news02.jpg" alt="【営業】職種別オンライン座談会" class="h-[160px] sm:h-[180px] lg:h-[198px] w-full object-cover">
+                        <div class="flex min-h-[170px] flex-col items-start gap-4 p-4">
+                          <div class="inline-flex h-6 items-center justify-center rounded-[5px] border border-[#007A88] px-4">
+                            <p class="text-sm font-bold text-[#007A88]">説明会</p>
+                          </div>
+                          <h3 class="text-[18px] font-bold leading-[1.5] tracking-[0.1em] text-[#333333]">
+                            【営業】職種別オンライン座談会
+                          </h3>
+                          <div class="mt-auto flex items-center gap-1">
+                            <img src="img/map_pin.svg" alt="" class="h-4 w-4 shrink-0">
+                            <p class="text-sm font-bold tracking-[0.1em] text-[#333333]">
+                              オンライン
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+  
+                    <li class="w-[240px] sm:w-[280px] lg:w-[320px] shrink-0 overflow-hidden rounded-[5px] bg-white shadow-[4px_4px_20px_rgba(197,197,197,0.25)]">
+                      <a href="#" class="block h-full">
+                        <img src="img/news01.jpg" alt="【営業】職種別オンライン座談会" class="h-[160px] sm:h-[180px] lg:h-[198px] w-full object-cover">
+                        <div class="flex min-h-[170px] flex-col items-start gap-4 p-4">
+                          <div class="inline-flex h-6 items-center justify-center rounded-[5px] border border-[#007A88] px-4">
+                            <p class="text-sm font-bold text-[#007A88]">説明会</p>
+                          </div>
+                          <h3 class="text-[18px] font-bold leading-[1.5] tracking-[0.1em] text-[#333333]">
+                            【営業】職種別オンライン座談会
+                          </h3>
+                          <div class="mt-auto flex items-center gap-1">
+                            <img src="img/map_pin.svg" alt="" class="h-4 w-4 shrink-0">
+                            <p class="text-sm font-bold tracking-[0.1em] text-[#333333]">
+                              オンライン
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+        
+                  </ul>
+            
+              </div>
+            </div>
+          </div>
+      
+          <!-- btn-->
+          <div class="mt-8 md:mt-10 lg:mt-12 flex justify-center">
+            <a
+              class="inline-flex w-full max-w-[240px] items-center justify-between rounded-full border border-[#007A88] bg-white px-8 py-2 text-base font-medium text-[#007A88] transition-colors duration-300 hover:bg-[#007A88] hover:text-white"
+              href="#"
+            >
+              お知らせ一覧
+              <span aria-hidden="true">›</span>
+            </a>
+          </div>
+      
+        </div>
+      </section>
 
 			<section class="cta">
 				<h2>人を大切にする家づくりを。</h2>
@@ -518,5 +691,29 @@
 			<p>&copy; kazemori_recruit2026</p>
 
     </footer>
+
+    <script>
+      const newsScroll = document.getElementById("newsScroll");
+      const newsPrev = document.getElementById("newsPrev");
+      const newsNext = document.getElementById("newsNext");
+    
+      if (newsScroll && newsPrev && newsNext) {
+        const scrollAmount = 344;
+    
+        newsPrev.addEventListener("click", () => {
+          newsScroll.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth"
+          });
+        });
+    
+        newsNext.addEventListener("click", () => {
+          newsScroll.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+          });
+        });
+      }
+    </script>
 </body>
 </html>
