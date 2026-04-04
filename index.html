@@ -698,21 +698,74 @@
 
     </main>
 
-    <footer>
-			<img src="img/logo.svg" alt="風と森の工務店">
-			<ul>
-				<li><a href="#">募集職種</a></li>
-				<li><a href="#">わたしたちの想い</a></li>
-				<li><a href="#">会社について</a></li>
-				<li><a href="#">お知らせ</a></li>
-				<li><a href="#">エントリー</a></li>
-			</ul>
-			<ul>
-				<li><a href="#">プライバシーポリシー</a></li>
-				<li><a href="#">風と森の工務店コーポレートサイトはこちら</a></li>
-			</ul>
-			<p>&copy; kazemori_recruit2026</p>
-
+    <footer class="bg-[#007A88] rounded-tl-[60px] md:rounded-tl-[100px] pt-14 pb-10 px-5 md:px-10 lg:px-14 md:pt-[86px] md:pb-10">
+      <div class="mx-auto w-full max-w-[1000px] flex flex-col gap-10 md:gap-[40px]">
+    
+        <!-- ロゴ -->
+        <a href="#top" class="block w-fit">
+          <img
+            src="img/logo.svg"
+            alt="ロゴマーク"
+            class="w-[180px] md:w-[240px] h-auto"
+          >
+        </a>
+           
+        <!-- ナビゲーション -->
+        <div class="flex flex-col gap-6 md:gap-4">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-8">
+            
+            <nav aria-label="フッターナビゲーション">
+              <ul class="grid w-fit grid-cols-[max-content_max-content] gap-y-8 gap-x-8 md:flex md:flex-wrap md:items-center md:gap-x-8 md:gap-y-4">
+                <li>
+                  <a href="#position" class="text-white text-base font-bold leading-[1.8] tracking-[0.1em] hover:opacity-80 transition">
+                    募集職種
+                  </a>
+                </li>
+                <li>
+                  <a href="#mission-value" class="text-white text-base font-bold leading-[1.8] tracking-[0.1em] hover:opacity-80 transition">
+                    わたしたちの想い
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" class="text-white text-base font-bold leading-[1.8] tracking-[0.1em] hover:opacity-80 transition">
+                    会社について
+                  </a>
+                </li>
+                <li>
+                  <a href="#news" class="text-white text-base font-bold leading-[1.8] tracking-[0.1em] hover:opacity-80 transition">
+                    お知らせ
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            
+            <div class="flex justify-start">
+              <a href="#entry"
+                class="inline-flex min-w-[200px] items-center justify-center gap-6 rounded-full border border-[#007A88] bg-white px-6 py-2 text-base font-semibold text-[#007A88] transition-colors duration-300 hover:bg-[#007A88] hover:text-white hover:border-white">        
+                エントリー
+                <span aria-hidden="true">›</span>
+              </a>
+            </div>
+            
+          </div>
+    
+          <!-- サブリンク -->
+          <div class="flex flex-col gap-4">
+            <a href="#" class="text-white text-sm font-bold leading-[1.7] tracking-[0.1em] hover:opacity-80 transition">
+              プライバシーポリシー
+            </a>
+            <a href="#" class="text-white text-sm font-bold leading-[1.7] tracking-[0.1em] hover:opacity-80 transition">
+              風と森の工務店コーポレートサイトはこちら
+            </a>
+          </div>
+        </div>
+    
+        <div class="border-t border-[#80BCC3]"></div>
+    
+        <p class="font-arial text-sm leading-[1.5] tracking-[0.1em] text-white">
+          ©kazemori_recruit2026
+        </p>
+      </div>
     </footer>
 
     <script>
