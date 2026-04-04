@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
 
 
 <body>
-  <header class="absolute top-0 left-0 w-full z-20 ">
+  <header id="siteHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
     <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between max-w-[1000px]">
       <a href="#" class="shrink-0">
         <img src="img/logo.svg" alt="風と森の工務店" class="h-7 w-auto">
@@ -36,14 +36,14 @@
       <!-- PCナビ（1024px以上） -->
       <nav class="hidden lg:block">
         <ul class="flex items-center gap-6 text-white text-m font-medium">
-          <li><a href="#position" class="hover:opacity-80 transition">募集職種</a></li>
-          <li><a href="#mission-value" class="hover:opacity-80 transition">わたしたちの想い</a></li>
-          <li><a href="#about" class="hover:opacity-80 transition">会社について</a></li>
-          <li><a href="#news" class="hover:opacity-80 transition">お知らせ</a></li>
+          <li><a href="#position" class="header-link text-white transition-colors duration-300 hover:opacity-80 transition">募集職種</a></li>
+          <li><a href="#mission-value" class="header-link text-white transition-colors duration-300 hover:opacity-80 transition">わたしたちの想い</a></li>
+          <li><a href="#about" class="header-link text-white transition-colors duration-300 hover:opacity-80 transition">会社について</a></li>
+          <li><a href="#news" class="header-link text-white transition-colors duration-300 hover:opacity-80 transition">お知らせ</a></li>
         </ul>
       </nav>
       
-      <a href="#entry" class="hidden lg:block items-center gap-2 px-8 py-1 rounded-full bg-[#007A88] text-white text-m font-medium hover:bg-white hover:text-[#007A88] transition-colors duration-300">
+      <a href="#entry" class="header-btn hidden lg:block items-center gap-2 px-8 py-1 rounded-full bg-[#007A88] text-white text-m font-medium hover:bg-white hover:text-[#007A88] transition-colors duration-300">
         エントリー
         <span aria-hidden="true">›</span>
       </a>
@@ -791,5 +791,38 @@
         });
       }
     </script>
-</body>
+
+    <script>
+      const header = document.getElementById("siteHeader");
+      const headerBtn = document.querySelector(".header-btn");
+      const mv = document.getElementById("top");
+
+      function updateHeaderStyle() {
+        const trigger = mv.offsetHeight - 80;
+
+        if (window.scrollY > trigger) {
+          // 背景をグリーンに
+          header.classList.remove("bg-transparent");
+          header.classList.add("bg-[#007A88]");
+
+          // ボタンを白に
+          headerBtn.classList.remove("bg-[#007A88]", "text-white");
+          headerBtn.classList.add("bg-white", "text-[#007A88]");
+          
+        } else {
+          // 背景を透明に戻す
+          header.classList.add("bg-transparent");
+          header.classList.remove("bg-[#007A88]");
+
+          // ボタンを元に戻す
+          headerBtn.classList.add("bg-[#007A88]", "text-white");
+          headerBtn.classList.remove("bg-white", "text-[#007A88]");
+        }
+      }
+
+      window.addEventListener("scroll", updateHeaderStyle);
+      window.addEventListener("load", updateHeaderStyle);
+    </script>
+    
+  </body>
 </html>
